@@ -1,11 +1,11 @@
-/* global phaser */
+/* global Phaser */
 
-  const config = {
-    type: Phaser,AUTO,
-    width: 1920,
-    height: 1880,
-    backgroundColor: 0x5f6e7a
-  }
+const config = {
+  type: Phaser.AUTO,
+  width: 1920,
+  height: 1080,
+  backgrondColor: 0x5f6e7a
+}
 
-const game = new.Phaser.Game(config)
+const game = new Phaser.Game(config)
 console.log(game)
