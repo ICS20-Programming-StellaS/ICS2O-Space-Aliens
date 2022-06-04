@@ -13,7 +13,7 @@ class SplashScene extends Phaser.Scene {
 
 // Splash scene background golour (grey-blue colour)
   init (data) {
-    this.cameras.main.setBackgroundColor('#5f6e7a')
+    this.cameras.main.setBackgroundColor('#DDF6F6')
   }
 
   preload () {
