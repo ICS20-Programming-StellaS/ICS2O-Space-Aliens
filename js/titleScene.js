@@ -4,7 +4,7 @@
 //
 // Created by: Stella S
 // Created on: May 2022
-// This is theTtitle scene
+// This is the title scene
 
 class TitleScene extends Phaser.Scene {
   constructor () {

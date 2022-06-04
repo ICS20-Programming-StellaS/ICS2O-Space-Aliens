@@ -13,7 +13,7 @@ import TitleScene from './titleScene.js'
 const splashScene = new SplashScene()
 const titleScene = new TitleScene()
 
-//*Game scence */
+//*Game scene */
 const config = {
   type: Phaser.AUTO,
   width: 1920,
@@ -25,7 +25,7 @@ const config = {
     }
   },
   //Set background color
-  backgrondColor: 0xffffff,
+  backgroundColor: 0xDDF6F6,
   scale: {
     mode: Phaser.Scale.FIT,
     //We place it in the middle of the page
@@ -38,7 +38,7 @@ const game = new Phaser.Game(config)
 // load scense
 // NOTE: remember an "key" is a global and CAN NOT be reused
 game.scene.add('splashScene', splashScene)
-game.scene.add('titlehScene', titleScene)
+game.scene.add('titleScene', titleScene)
 
 // start title
 game.scene.start('splashScene')

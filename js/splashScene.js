@@ -11,7 +11,7 @@ class SplashScene extends Phaser.Scene {
     super({ key: 'splashScene' })
   }
 
-// Splash scene background golour (grey-blue colour)
+// Splash scene background golour (teal-blue colour)
   init (data) {
     this.cameras.main.setBackgroundColor('#DDF6F6')
   }
@@ -27,7 +27,7 @@ class SplashScene extends Phaser.Scene {
     this.splashSceneBackgroundImage.y = 1080 / 2
   }
 
- // Switches the splach scene over to the title scene
+ // Switches the splash scene over to the title scene
   update (time, delta) {
     if (time > 3000) {
       this.scene.switch('titleScene')
