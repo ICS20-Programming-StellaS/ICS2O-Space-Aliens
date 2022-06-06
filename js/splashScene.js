@@ -3,7 +3,7 @@
 // Copyright (c) 2022 Stella S All rights reserved
 //
 // Created by: Stella S
-// Created on: May 2022
+// Created on: Jun 2022
 // This is the splash scene
 
 class SplashScene extends Phaser.Scene {

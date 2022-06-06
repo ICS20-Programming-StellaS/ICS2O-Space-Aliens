@@ -3,7 +3,7 @@
 // Copyright (c) 2022 Stella S All rights reserved
 //
 // Created by: Stella S
-// Created on: May 2022
+// Created on: Jun 2022
 // This is the title scene
 
 class TitleScene extends Phaser.Scene {
@@ -33,6 +33,9 @@ class TitleScene extends Phaser.Scene {
   }
 
   update (time, delta) {
+    if (time > 6000) {
+      this.scene.switch('menuScene')
+    }
   }
 }
 
