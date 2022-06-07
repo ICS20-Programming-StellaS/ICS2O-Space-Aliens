@@ -22,23 +22,29 @@ class MenuScene extends Phaser.Scene {
   // console message
   preload () {
     console.log("Menu Scene")
-    this.load.image('menuSceneBackground', 'assets/aliens_screen_image2.jpg')
-    this.load.image('startButton', 'assets/start.png')
+
+    //images
+    this.load.image('menuSceneBackground', 'images/aliens_screen_image2.jpg')
+    this.load.image('startButton', 'images/start.png')
   }
 
+  //location of menuSceneBackground image
   create (data) {
     this.menuSceneBackgroundImage = this.add.sprite(0, 0, 'menuSceneBackground')
     this.menuSceneBackgroundImage.x = 1920 / 2
     this.menuSceneBackgroundImage.y = 1080 / 2
 
+  //Start button location
     this.startButton = this.add.sprite(1920 / 2, (1080 / 2) + 100, 'startButton')
     this.startButton.setInteractive({ useHandCursor: true })
     this.startButton.on('pointerdown', () => this.clickButton())
   }
 
+  //time duration
   update (time, delta) {
   }
-  
+
+  //start button click
   clickButton () {
     this.scene.start('gameScene')
   }

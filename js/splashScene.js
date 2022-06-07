@@ -16,11 +16,15 @@ class SplashScene extends Phaser.Scene {
     this.cameras.main.setBackgroundColor('#DDF6F6')
   }
 
+  //load splashScene image
   preload () {
     console.log('Splash Scene')
-    this.load.image('splashSceneBackground', './assets/splashSceneImage.png')
-  }
 
+    //image
+    this.load.image('splashSceneBackground', './images/splashSceneImage.png')
+  }
+  
+  //splashSceneBackground image location
   create (data) {
     this.splashSceneBackgroundImage = this.add.sprite(0, 0, 'splashSceneBackground')
     this.splashSceneBackgroundImage.x = 1920 / 2
@@ -29,7 +33,7 @@ class SplashScene extends Phaser.Scene {
 
  // Switches the splash scene over to the title scene
   update (time, delta) {
-    if (time > 3000) {
+    if (time > 3500) {
       this.scene.switch('titleScene')
     }
   }
