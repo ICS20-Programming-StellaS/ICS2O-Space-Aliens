@@ -37,7 +37,7 @@ class MenuScene extends Phaser.Scene {
 
     this.menuSceneText = this.add.text(1920 / 2, (1370 / 2) + 350, 'Use the SPACE BAR to  fire missiles, and use the LEFT and RIGHT arrow keys to move', this.titleSceneTextStyle).setOrigin(0.5).setScale(2)
 
-    this.menuSceneText = this.add.text(1920 / 2, (1280 / 2) + 350, 'Objective - Fire the missiles to desty the aliens', this.titleSceneTextStyle).setOrigin(0.5).setScale(2)
+    this.menuSceneText = this.add.text(1920 / 2, (1280 / 2) + 350, 'Objective - Fire the missiles to destroy the aliens', this.titleSceneTextStyle).setOrigin(0.5).setScale(2)
   }
 
   update (time, delta) {
