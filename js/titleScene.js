@@ -23,7 +23,7 @@ class TitleScene extends Phaser.Scene {
     console.log('Title Scene')
 
     //image
-    this.load.image('titleSceneBackground', 'images/aliens_screen_image.jpg')
+    this.load.image('titleSceneBackground', 'images/dino_scene.webp')
   }
 
   //title scene location
@@ -33,7 +33,7 @@ class TitleScene extends Phaser.Scene {
     this.titleSceneBackgroundImage.y = 1080 / 2
 
     //title scene on screen text
-    this.titleSceneText = this.add.text(1920 / 2, (1080 / 2) + 350, 'Space Aliens', this.titleSceneTextStyle).setOrigin(0.5)
+    this.titleSceneText = this.add.text(1920 / 2, (1080 / 2) + 350, "Help Dino", this.titleSceneTextStyle).setOrigin(0.5)
   }
 
   //Switches the title scene over to the menu scene

@@ -13,7 +13,7 @@ class GameScene extends Phaser.Scene {
     const alienXLocation = Math.floor(Math.random() * 1920) + 1 // this will get a number between 1 and 1920;
     let alienXVelocity = Math.floor(Math.random() * 50) + 1 // this will get a number between 1 and 50;
     alienXVelocity *= Math.round(Math.random()) ? 1 : -1 // this will add minus sign in 50% of cases
-    const anAlien = this.physics.add.sprite(alienXLocation, -100, 'alien')
+    const anAlien = this.physics.add.sprite(alienXLocation, -100, 'rock').setScale(0.2)
     anAlien.body.velocity.y = 200
     anAlien.body.velocity.x = alienXVelocity
     this.alienGroup.add(anAlien)
@@ -35,28 +35,28 @@ class GameScene extends Phaser.Scene {
   init (data) {
     this.cameras.main.setBackgroundColor('#0x5f6e7a')
   }
-
+  //load gameScene image
   preload () {
     console.log('Game Scene')
 
     // images
-    this.load.image('starBackground', 'images/starBackground.png')
-    this.load.image('ship', 'images/spaceShip.png')
-    this.load.image('missile', 'images/missile.png')
-    this.load.image('alien', 'images/alien.png')
+    this.load.image('land', 'images/8bit_land.png')
+    this.load.image('dino', 'images/dino.png')
+    this.load.image('fireball', 'images/8bit_fire.jpg')
+    this.load.image('rock', 'images/8bit_rock.png')
     // sound
-    this.load.audio('laser', 'sounds/laser1.wav')
+    this.load.audio('fire', 'sounds/fire_sound.mp3')
     this.load.audio('explosion', 'sounds/barrelExploding.wav')
     this.load.audio('bomb', 'sounds/bomb.wav')
   }
 
   create (data) {
-    this.background = this.add.image(0, 0, 'starBackground').setScale(2.0)
+    this.background = this.add.image(0, 0, 'land').setScale(1.1)
     this.background.setOrigin(0, 0)
 
     this.scoreText = this.add.text(10, 10, 'Score: ' + this.score.toString(), this.scoreTextStyle)
 
-    this.ship = this.physics.add.sprite(1920 / 2, 1080 - 100, 'ship')
+    this.ship = this.physics.add.sprite(1920 / 2, 1080 - 100, 'dino').setScale(0.3)
 
     // create a group for the missiles
     this.missileGroup = this.physics.add.group()
@@ -111,9 +111,9 @@ class GameScene extends Phaser.Scene {
       if (this.fireMissile === false) {
         // fire missile
         this.fireMissile = true
-        const aNewMissile = this.physics.add.sprite(this.ship.x, this.ship.y, 'missile')
+        const aNewMissile = this.physics.add.sprite(this.ship.x, this.ship.y, 'fireball')
         this.missileGroup.add(aNewMissile)
-        this.sound.play('laser')
+        this.sound.play('fire')
       }
     }
   
