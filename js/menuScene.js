@@ -15,7 +15,8 @@ class MenuScene extends Phaser.Scene {
   }
 
   init (data) {
-    // set the background colour to red
+    
+    // set the background colour to white
     this.cameras.main.setBackgroundColor('#ffffff')
   }
 
@@ -24,8 +25,10 @@ class MenuScene extends Phaser.Scene {
     console.log("Menu Scene")
     this.load.image('menuSceneBackground', 'images/8bit_earth.jpg')
     this.load.image('startButton', 'images/start.png')
+    
   }
 
+  // locations of background, button and text
   create (data) {
     this.menuSceneBackgroundImage = this.add.sprite(0, 0, 'menuSceneBackground').setScale(4,4)
     this.menuSceneBackgroundImage.x = 1920 / 2
@@ -35,17 +38,19 @@ class MenuScene extends Phaser.Scene {
     this.startButton.setInteractive({ useHandCursor: true })
     this.startButton.on('pointerdown', () => this.clickButton())
 
-    this.menuSceneText = this.add.text(1920 / 2, (1370 / 2) + 350, 'Use the SPACE BAR to  fire, and use the LEFT and RIGHT arrow keys to move DINO', this.titleSceneTextStyle).setOrigin(0.5).setScale(2)
+    this.menuSceneText = this.add.text(1920 / 2, (1170 / 2) + 350, 'Use the SPACE BAR to  fire, and use the LEFT and RIGHT arrow keys to move DINO', this.titleSceneTextStyle).setOrigin(0.5).setScale(2)
 
-    this.menuSceneText = this.add.text(1920 / 2, (1280 / 2) + 350, 'Objective - Fire to destroy the meteors before they kill DINO', this.titleSceneTextStyle).setOrigin(0.5).setScale(2)
+    this.menuSceneText = this.add.text(1920 / 2, (1080 / 2) + 350, 'Objective - Fire to destroy the meteors before they kill DINO', this.titleSceneTextStyle).setOrigin(0.5).setScale(2)
   }
 
   update (time, delta) {
   }
 
+  // when button is clicked
   clickButton () {
     this.scene.start('gameScene')
   }
+
 }
 
 export default MenuScene

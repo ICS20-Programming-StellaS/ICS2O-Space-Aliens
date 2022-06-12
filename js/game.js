@@ -32,6 +32,7 @@ const config = {
   backgroundColor: 0xDDF6F6,
   scale: {
     mode: Phaser.Scale.FIT,
+    
     //We place it in the middle of the page
     autoCenter: Phaser.Scale.CENTER_BOTH
   }

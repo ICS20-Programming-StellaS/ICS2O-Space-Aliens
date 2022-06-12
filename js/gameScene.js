@@ -44,6 +44,7 @@ class GameScene extends Phaser.Scene {
     this.load.image('dino', 'images/dino.png')
     this.load.image('fireball', 'images/8bit_fire.jpg')
     this.load.image('rock', 'images/8bit_rock.png')
+    
     // sound
     this.load.audio('fire', 'sounds/fire_sound.mp3')
     this.load.audio('explosion', 'sounds/barrelExploding.wav')
@@ -82,7 +83,7 @@ class GameScene extends Phaser.Scene {
       this.physics.pause()
       alienCollide.destroy()
       shipCollide.destroy()
-      this.gameOverText = this.add.text(1920 / 2, 1080 / 2, 'Game Over!\nClick to play again.', this.gameOverTextStyle).setOrigin(0.5)
+      this.gameOverText = this.add.text(1920 / 2, 1080 / 2, 'DINO is now extinct!\nClick here to play again.', this.gameOverTextStyle).setOrigin(0.5)
       this.gameOverText.setInteractive({ useHandCursor: true })
       this.gameOverText.on('pointerdown', () => this.scene.start('gameScene'))
     }.bind(this))
@@ -109,6 +110,7 @@ class GameScene extends Phaser.Scene {
     }
     if (keySpaceObj.isDown === true) {
       if (this.fireMissile === false) {
+        
         // fire missile
         this.fireMissile = true
         const aNewMissile = this.physics.add.sprite(this.ship.x, this.ship.y, 'fireball')
