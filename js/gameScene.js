@@ -42,7 +42,7 @@ class GameScene extends Phaser.Scene {
     // images
     this.load.image('land', 'images/8bit_land.png')
     this.load.image('dino', 'images/dino.png')
-    this.load.image('fireball', 'images/8bit_fire.jpg')
+    this.load.image('fireball', 'images/8bit_fire.png')
     this.load.image('rock', 'images/8bit_rock.png')
     
     // sound
@@ -86,6 +86,7 @@ class GameScene extends Phaser.Scene {
       this.gameOverText = this.add.text(1920 / 2, 1080 / 2, 'DINO is now extinct!\nClick here to play again.', this.gameOverTextStyle).setOrigin(0.5)
       this.gameOverText.setInteractive({ useHandCursor: true })
       this.gameOverText.on('pointerdown', () => this.scene.start('gameScene'))
+      this.score = 0
     }.bind(this))
   }
 
