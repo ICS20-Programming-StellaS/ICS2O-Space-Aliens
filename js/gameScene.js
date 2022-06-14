@@ -130,6 +130,14 @@ class GameScene extends Phaser.Scene {
         item.destroy()
       }
     })
+      // if enemy leaves screen
+      // alien loop
+     this.alienGroup.children.each(function (item) {
+      if (item.y > 1080) {
+        item.y = -10
+        item.x = Math.floor(Math.random() * 1920 + 1)
+      }
+    })
   }
 }
 
