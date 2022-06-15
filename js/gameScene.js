@@ -25,8 +25,10 @@ class GameScene extends Phaser.Scene {
     this.ship = null
     this.fireMissile = false
     this.score = 0
+    this.lives = 3
     this.scoreText = null
     this.scoreTextStyle = { font: '65px Arial', fill: '#ffffff', align: 'center' }
+    this.livesTextStyle = { font: '65px Arial', fill: '#ffffff', align: 'center' }
 
     this.gameOverText = null
     this.gameOverTextStyle = { font: '65px Arial', fill: '#ff0000', align: 'center' }
@@ -57,6 +59,8 @@ class GameScene extends Phaser.Scene {
 
     this.scoreText = this.add.text(10, 10, 'Score: ' + this.score.toString(), this.scoreTextStyle)
 
+    this.livesText = this.add.text(10, 10, 'Lives: ' + this.lives.toString(), this.livesTextStyle)
+
     this.ship = this.physics.add.sprite(1920 / 2, 1080 - 100, 'dino').setScale(0.3)
 
     // create a group for the missiles
@@ -77,8 +81,11 @@ class GameScene extends Phaser.Scene {
       this.createAlien()
     }.bind(this))
 
+
+
     // Collisions between ship and aliens
     this.physics.add.collider(this.ship, this.alienGroup, function (shipCollide, alienCollide) {
+    if (this.lives <= 0)
       this.sound.play('bomb')
       this.physics.pause()
       alienCollide.destroy()
@@ -87,6 +94,18 @@ class GameScene extends Phaser.Scene {
       this.gameOverText.setInteractive({ useHandCursor: true })
       this.gameOverText.on('pointerdown', () => this.scene.start('gameScene'))
       this.score = 0
+    }.bind(this))
+
+    // Collisions between ship and aliens
+    this.physics.add.collider(this.missileGroup, this.alienGroup, function (missilCollide, alienCollide) {
+    
+      alienCollide.destroy()
+      missileCollide.destroy()
+      this.sound.play('explosion')
+      this.score = this.score + 1
+      this.scoreText.setText('Score: ' + this.score.toString())
+      this.createAlien()
+      this.createAlien()
     }.bind(this))
   }
 
