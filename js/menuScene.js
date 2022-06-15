@@ -25,6 +25,7 @@ class MenuScene extends Phaser.Scene {
     console.log("Menu Scene")
     this.load.image('menuSceneBackground', 'images/8bit_earth.jpg')
     this.load.image('startButton', 'images/start.png')
+    this.load.image('instructionButton', 'images/instructionButton.png')
     
   }
 
@@ -38,9 +39,10 @@ class MenuScene extends Phaser.Scene {
     this.startButton.setInteractive({ useHandCursor: true })
     this.startButton.on('pointerdown', () => this.clickButton())
 
-    this.menuSceneText = this.add.text(1920 / 2, (1170 / 2) + 350, 'Use the SPACE BAR to  fire, and use the LEFT and RIGHT arrow keys to move DINO', this.titleSceneTextStyle).setOrigin(0.5).setScale(2)
-
-    this.menuSceneText = this.add.text(1920 / 2, (1080 / 2) + 350, 'Objective - Fire to destroy the meteors before they kill DINO', this.titleSceneTextStyle).setOrigin(0.5).setScale(2)
+    // instrcution button
+    this.instructionButton = this.add.sprite(490 / 2, (30 / 2) + 100, 'instructionButton').setScale(0.3)
+    this.instructionButton.setInteractive({ useHandCursor: true })
+    this.instructionButton.on('pointerdown', () => this.instructClickButton())
   }
 
   update (time, delta) {
@@ -49,6 +51,11 @@ class MenuScene extends Phaser.Scene {
   // when button is clicked
   clickButton () {
     this.scene.start('gameScene')
+  }
+
+  // when button is clicked
+  instructClickButton () {
+    this.scene.start('instructionScene')
   }
 
 }
