@@ -47,9 +47,9 @@ class GameScene extends Phaser.Scene {
     this.load.image('rock', 'images/8bit_rock.png')
     
     // sound
-    this.load.audio('fire', 'sounds/fire_sound.mp3')
+    this.load.audio('fire', 'sounds/fireSound.mp3')
     this.load.audio('explosion', 'sounds/endingSound.mp3')
-    this.load.audio('collision', 'sounds/collision.mp3')
+    this.load.audio('collision', 'sounds/hitSound.mp3')
   }
 
   create (data) {
