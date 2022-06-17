@@ -1,9 +1,9 @@
-/* global Phaser */
+/* global Phaser*/
 
-// Copyright (c) 2022 Stella S All rights reserved
-//
-// Created by: Stella S
-// Created on:Jun 2022
+// Copyright (c) 2020 Mr. Coxall All rights reserved
+//modified by Stella
+// Created by:Stella
+// Created on: Jun 2022
 // This is the Phaser3 configuration file
 
 import SplashScene from './splashScene.js'
