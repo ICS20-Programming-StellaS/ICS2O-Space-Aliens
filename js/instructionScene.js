@@ -39,9 +39,9 @@ class InstructionScene extends Phaser.Scene {
     this.startButton.on('pointerdown', () => this.clickButton())
     
     // Instructions
-    this.menuSceneText = this.add.text(1920 / 2, (90 / 2) + 350, 'Use the SPACE BAR to fire, and use the LEFT and RIGHT arrow keys to move DINO', this.titleSceneTextStyle).setOrigin(0.5).setScale(2)
+    this.menuSceneText = this.add.text(1920 / 2, (90 / 2) + 350, 'Use the SPACE BAR to fire, and use the LEFT and RIGHT arrow keys to move DINO.', this.titleSceneTextStyle).setOrigin(0.5).setScale(2.5)
 
-    this.menuSceneText = this.add.text(1920 / 2, (5 / 2) + 350, 'Objective - Fire to destroy the meteors before they kill DINO', this.titleSceneTextStyle).setOrigin(0.5).setScale(2)
+    this.menuSceneText = this.add.text(1920 / 2, (5 / 2) + 350, 'Objective - Fire to destroy the meteors before they kill DINO.', this.titleSceneTextStyle).setOrigin(0.5).setScale(2.7)
   }
 
   update (time, delta) {

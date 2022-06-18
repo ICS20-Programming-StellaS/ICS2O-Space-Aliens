@@ -61,7 +61,7 @@ class GameScene extends Phaser.Scene {
 
     this.dino = this.physics.add.sprite(1920 / 2, 1080 - 100, 'dino').setScale(0.3)
 
-    this.homeButton = this.add.sprite(1750, (1050 / 7) + 1, 'homeButton').setScale(0.3)
+    this.homeButton = this.add.sprite(1800, (850 / 7) + 1, 'homeButton').setScale(0.3)
     this.homeButton.setInteractive({ useHandCursor: true })
     this.homeButton.on('pointerdown', () => 
     this.scene.start('menuScene', this.score = 0))
