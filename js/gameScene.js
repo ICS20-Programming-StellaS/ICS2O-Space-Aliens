@@ -45,6 +45,7 @@ class GameScene extends Phaser.Scene {
     this.load.image('dino', 'images/dino.png')
     this.load.image('fireball', 'images/8bit_fire.png')
     this.load.image('rock', 'images/8bit_rock.png')
+    this.load.image('homeButton', 'images/homeButton.png')
     
     // sound
     this.load.audio('fire', 'sounds/fireSound.mp3')
@@ -59,6 +60,13 @@ class GameScene extends Phaser.Scene {
     this.scoreText = this.add.text(10, 10, 'Score: ' + this.score.toString(), this.scoreTextStyle)
 
     this.dino = this.physics.add.sprite(1920 / 2, 1080 - 100, 'dino').setScale(0.3)
+
+    this.homeButton = this.add.sprite(1750, (1050 / 7) + 1, 'homeButton').setScale(0.3)
+    this.homeButton.setInteractive({ useHandCursor: true })
+    this.homeButton.on('pointerdown', () => 
+    this.scene.start('menuScene', this.score = 0))
+
+
 
     // create a group for the fires
     this.fireGroup = this.physics.add.group()
@@ -140,6 +148,10 @@ class GameScene extends Phaser.Scene {
         item.x = Math.floor(Math.random() * 1920 + 1)
       }
     })
+  }
+    // Switches to Menu Scene When Home Button Is Clicked
+  homeClickButton () {
+    this.scene.start('menuScene')
   }
 }
 

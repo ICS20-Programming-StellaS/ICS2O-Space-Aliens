@@ -24,7 +24,7 @@ class InstructionScene extends Phaser.Scene {
   preload () {
     console.log("Instruction Scene")
     this.load.image('instructionSceneBackground', './images/instructScene.jpg')
-    this.load.image('leftButton', './images/leftButton.png')
+    this.load.image('backButton', './images/back.png')
     
   }
 
@@ -34,7 +34,7 @@ class InstructionScene extends Phaser.Scene {
     this.background.setOrigin(0, 0)
     
     // back button
-    this.startButton = this.add.sprite(430 / 2, (30 / 2) + 100, 'leftButton')
+    this.startButton = this.add.sprite(430 / 2, (30 / 2) + 100, 'backButton')
     this.startButton.setInteractive({ useHandCursor: true })
     this.startButton.on('pointerdown', () => this.clickButton())
     
